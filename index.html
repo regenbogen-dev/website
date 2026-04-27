@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アロナビ (AroNavi) - サポート / Support</title>
+    <style>
+        :root {
+            --primary: #34C759;
+            --primary-dark: #248A3D;
+            --bg: #F5F5F7;
+            --card-bg: #FFFFFF;
+            --text: #1D1D1F;
+            --text-secondary: #86868B;
+            --border: #D2D2D7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1D1D1F;
+                --card-bg: #2C2C2E;
+                --text: #F5F5F7;
+                --text-secondary: #98989D;
+                --border: #48484A;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #34C759, #30D158);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 48px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .lang-toggle {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .lang-toggle button {
+            background: none;
+            border: 1px solid var(--border);
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text);
+            margin: 0 4px;
+            transition: all 0.2s;
+        }
+
+        .lang-toggle button.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+        }
+
+        section h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        section h2 .icon {
+            font-size: 22px;
+        }
+
+        section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 16px 0 8px;
+        }
+
+        p, li {
+            font-size: 15px;
+            color: var(--text);
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        a {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-link {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 24px;
+            font-weight: 600;
+            font-size: 15px;
+            margin-top: 12px;
+            transition: opacity 0.2s;
+        }
+
+        .contact-link:hover {
+            opacity: 0.85;
+            text-decoration: none;
+        }
+
+        .requirements-table {
+            width: 100%;
+            margin: 12px 0;
+            border-collapse: collapse;
+        }
+
+        .requirements-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+
+        .requirements-table td:first-child {
+            font-weight: 600;
+            width: 40%;
+            color: var(--text-secondary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 32px 0;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="app-icon">🧭</div>
+            <h1>アロナビ (AroNavi)</h1>
+            <p>AroundMe Navigator</p>
+        </header>
+
+        <div class="lang-toggle">
+            <button id="btn-ja" class="active" onclick="switchLang('ja')">日本語</button>
+            <button id="btn-en" onclick="switchLang('en')">English</button>
+        </div>
+
+        <!-- 日本語 -->
+        <div id="content-ja">
+            <section>
+                <h2><span class="icon">📱</span> アプリ概要</h2>
+                <p>アロナビは、現在地から目的地への方向と距離をリアルタイムで表示する歩行者向けナビゲーションアプリです。地図上の方向矢印で直感的にナビゲーションを提供します。</p>
+                <h3>主な機能</h3>
+                <ul>
+                    <li>リアルタイム方向矢印ナビゲーション</li>
+                    <li>あいまい検索・略称検索（コンビニ、カフェなど）対応</li>
+                    <li>地図の2D/3D表示切替</li>
+                    <li>Apple Watch連携（独立GPS・コンパス対応）</li>
+                    <li>地図長押しによる直接目的地設定</li>
+                    <li>目的地到着時の自動案内終了</li>
+                    <li>検索履歴の管理</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2><span class="icon">⚙️</span> 動作要件</h2>
+                <table class="requirements-table">
+                    <tr><td>iPhone</td><td>iOS 26.0 以降</td></tr>
+                    <tr><td>Apple Watch</td><td>watchOS 26.0 以降（オプション）</td></tr>
+                    <tr><td>位置情報</td><td>「使用中のみ許可」が必要</td></tr>
+                    <tr><td>通知</td><td>Apple Watch連携使用時に推奨</td></tr>
+                </table>
+            </section>
+
+            <section>
+                <h2><span class="icon">❓</span> よくある質問</h2>
+
+                <h3>位置情報が取得できません</h3>
+                <p>「設定」→「プライバシーとセキュリティ」→「位置情報サービス」からアロナビの位置情報アクセスを「使用中のみ」に設定してください。</p>
+
+                <h3>Apple Watchに案内が表示されません</h3>
+                <p>以下をご確認ください：</p>
+                <ul>
+                    <li>iPhoneとApple Watchがペアリングされていること</li>
+                    <li>アロナビの設定で「Watchで案内を表示」がONになっていること</li>
+                    <li>Watch側のアロナビアプリがインストールされていること</li>
+                </ul>
+
+                <h3>方向矢印が正しくありません</h3>
+                <p>コンパスのキャリブレーション（8の字を描く動作）をお試しください。磁気の強い場所（電子機器の近くなど）では精度が低下する場合があります。</p>
+
+                <h3>現在地が少し動きます</h3>
+                <p>GPSの性質上、静止中でも数メートルの誤差が生じることがあります。Wi-FiをONにすると精度が向上します。</p>
+
+                <h3>バッテリー消費について</h3>
+                <p>案内中は高精度の位置情報を使用するため、通常より電力を消費します。長時間のナビゲーション時はバッテリー残量にご注意ください。</p>
+            </section>
+
+            <section>
+                <h2><span class="icon">🔒</span> プライバシーポリシー</h2>
+                <p>アロナビは以下のデータを使用します：</p>
+                <ul>
+                    <li><strong>位置情報</strong>：ナビゲーションの提供およびマップ表示のためにのみ使用します。</li>
+                    <li><strong>検索履歴</strong>：お使いのデバイス内にのみ保存されます。</li>
+                </ul>
+                <p>当アプリは、個人データを外部サーバーに送信したり、第三者と共有したりすることはありません。すべてのデータはお使いのデバイス上で処理されます。</p>
+                <p>地図データおよび検索結果はApple MapKitを通じて提供されます。これらのデータの取り扱いについてはAppleのプライバシーポリシーに準じます。</p>
+            </section>
+
+            <section>
+                <h2><span class="icon">📧</span> お問い合わせ</h2>
+                <p>不具合の報告、機能のリクエスト、その他ご質問がございましたら、下記までお気軽にお問い合わせください。</p>
+                <a href="mailto:regenbogen.dev@gmail.com" class="contact-link">メールで問い合わせる</a>
+            </section>
+        </div>
+
+        <!-- English -->
+        <div id="content-en" style="display: none;">
+            <section>
+                <h2><span class="icon">📱</span> About the App</h2>
+                <p>AroNavi is a pedestrian navigation app that displays real-time direction and distance from your current location to your destination. It provides intuitive navigation with directional arrows on the map.</p>
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Real-time directional arrow navigation</li>
+                    <li>Fuzzy search and abbreviation support</li>
+                    <li>2D/3D map view toggle</li>
+                    <li>Apple Watch support (independent GPS &amp; compass)</li>
+                    <li>Long-press to set destination directly on map</li>
+                    <li>Automatic arrival detection</li>
+                    <li>Search history management</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2><span class="icon">⚙️</span> Requirements</h2>
+                <table class="requirements-table">
+                    <tr><td>iPhone</td><td>iOS 26.0 or later</td></tr>
+                    <tr><td>Apple Watch</td><td>watchOS 26.0 or later (optional)</td></tr>
+                    <tr><td>Location</td><td>"While Using" permission required</td></tr>
+                    <tr><td>Notifications</td><td>Recommended for Apple Watch integration</td></tr>
+                </table>
+            </section>
+
+            <section>
+                <h2><span class="icon">❓</span> FAQ</h2>
+
+                <h3>Location is not being detected</h3>
+                <p>Go to Settings → Privacy &amp; Security → Location Services, and set AroNavi's location access to "While Using the App."</p>
+
+                <h3>Navigation doesn't appear on Apple Watch</h3>
+                <p>Please check the following:</p>
+                <ul>
+                    <li>iPhone and Apple Watch are paired</li>
+                    <li>"Show navigation on Watch" is enabled in AroNavi settings</li>
+                    <li>AroNavi Watch app is installed</li>
+                </ul>
+
+                <h3>Direction arrow seems inaccurate</h3>
+                <p>Try calibrating the compass by moving your device in a figure-8 pattern. Accuracy may decrease near strong magnetic fields (e.g., near electronic devices).</p>
+
+                <h3>My location drifts slightly when stationary</h3>
+                <p>GPS inherently has a few meters of error even when stationary. Turning on Wi-Fi can improve accuracy.</p>
+
+                <h3>Battery consumption</h3>
+                <p>High-accuracy location is used during navigation, which consumes more power than usual. Please monitor your battery level during extended navigation.</p>
+            </section>
+
+            <section>
+                <h2><span class="icon">🔒</span> Privacy Policy</h2>
+                <p>AroNavi uses the following data:</p>
+                <ul>
+                    <li><strong>Location data</strong>: Used solely for navigation and map display.</li>
+                    <li><strong>Search history</strong>: Stored only on your device.</li>
+                </ul>
+                <p>This app does not transmit personal data to external servers or share it with third parties. All data is processed on your device.</p>
+                <p>Map data and search results are provided through Apple MapKit. Please refer to Apple's privacy policy for the handling of this data.</p>
+            </section>
+
+            <section>
+                <h2><span class="icon">📧</span> Contact</h2>
+                <p>For bug reports, feature requests, or any questions, please feel free to contact us.</p>
+                <a href="mailto:regenbogen.dev@gmail.com" class="contact-link">Contact via Email</a>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Regenbogen. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.getElementById('content-ja').style.display = lang === 'ja' ? 'block' : 'none';
+            document.getElementById('content-en').style.display = lang === 'en' ? 'block' : 'none';
+            document.getElementById('btn-ja').className = lang === 'ja' ? 'active' : '';
+            document.getElementById('btn-en').className = lang === 'en' ? 'active' : '';
+        }
+    </script>
+</body>
+</html>
